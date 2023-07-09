@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdvanceLogin.Home">
+    <ContentPage Title="Home" Icon="Home.png">
+        <ContentPage.Content>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="Welcome to Advance Login Form" FontSize="Medium"></Label>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="User Info" Icon="user.png">
+        <ContentPage.Content>
+            <ScrollView>
+                <StackLayout Padding="15">
+                    <Image x:Name="myImage" HeightRequest="250" WidthRequest="250" Source="man.png"></Image>
+                    <ListView x:Name="EmployeeList" HasUnevenRows="True" ItemTapped="EmployeeList_ItemTapped">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Spacing="2">
+                                        <Label Text="{Binding Name, StringFormat='Name:{0:F0}'}" FontSize="Medium" FontAttributes="Bold"></Label>
+                                        <Label Text="{Binding DOB, StringFormat='Date of Birth:{0:D}'}" FontSize="Medium" FontAttributes="None"></Label>
+                                        <Label Text="{Binding POB, StringFormat='Place of Birth:{0:F0}'}" FontSize="Medium" FontAttributes="None"></Label>
+                                        <Label Text="{Binding Email, StringFormat='Email-Id:{0:F0}'}" FontSize="Medium" FontAttributes="None"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>
